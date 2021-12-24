@@ -1,0 +1,412 @@
+/* Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    font-family: "Nunito", Arial, Helvetica, sans-serif;
+    color: #222222;
+}
+ul {
+    list-style: none;
+}
+a {
+    text-decoration: none;
+}
+
+/* Melhorar o ajuste das imagens quando a tela é reduzida */
+img {
+    display: block;
+    max-width: 100%;
+}
+
+/* SUPERINFO */
+
+.superinfo-bg {
+    background: #121ab2;
+    color: white;
+}
+.superinfo {
+    max-width: 960px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    padding-top: 10px;
+}
+.superinfo p, .superinfo a {
+    margin: 0 10px 10px 10px;
+}
+.superinfo a {
+    color: white;
+}
+
+/* MENU */
+.menu-bg{
+    background: #2c70ff;
+}
+.menu {
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 15px 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.menu a {
+    color: white;
+}
+.menu-logo a {
+    font-size: 2.25em;
+    font-weight: bold;
+    margin: 0 10px;
+}
+.menu-nav ul {
+    display: flex;
+    flex-wrap: wrap;
+}
+.menu-nav a {
+    font-size: 1.25em;
+    display: block;
+    padding: 10px;
+}
+.menu-nav a:hover {
+    color: #121ab2;
+}
+
+@media (max-width: 600px){
+    .menu {
+        display: block;
+    }
+}
+
+/* INTRODUÇÃO */
+
+.introducao {
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 60px 10px;
+}
+.introducao h1 {
+    font-size: 3em;
+    line-height: 1;
+}
+
+/* SOBRE */
+
+.sobre {
+    border-top: solid 2px #121ab2;
+    border-bottom: solid 2px #121ab2;
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 60px 0;
+    display: flex;
+    /* como o sobre tem imagens ele deve quebrar para não danificar as imagens */
+    flex-wrap: wrap;
+}
+
+.sobre-info {
+    /* esse valor de flex 2 é devido o tamanho do texto em relação das imagens
+       quando o paragrafo chegar no tamanho de 300px, as imagens quebram para baixo */
+    flex: 2 1 300px;
+    margin: 0 10px;
+}
+
+.sobre-info h1 {
+    font-size: 3em;
+    margin-bottom: .5em;
+}
+.sobre-info p {
+    font-size: 1.25em;
+    line-height: 1.4;
+    margin-bottom: 1em;
+    color: #3a3838;
+}
+
+.sobre-img {
+    /* o valor de 160px é o mínimo aceitavel para as imagens 
+    após isso eles quebram para baixo */
+    flex: 1 1 160px;
+    margin: 0 10px;
+}
+
+/* PRODUTOS */
+
+.produtos {
+    max-width: 960px;
+    margin: 60px auto;
+}
+
+.produtos h1 {
+    font-size: 3em;
+    margin: 0 10px 60px 10px;
+}
+
+.produtos-container {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-end;
+}
+
+.produtos-item {
+    flex: 1 1 175px;
+    margin: 10px;
+}
+
+.produtos-item h2 {
+    font-size: 3em;
+    color: #a4a4a4;
+    background: #f7f7f7;
+    padding: 40px 20px;
+}
+
+.purple {
+    border-top: 8px solid #ae81ff ;
+}
+.pink {
+    border-top: 8px solid #f9265e ;
+}
+.blue {
+    border-top: 8px solid #66d9eb ;
+}
+
+@media (max-width: 650px){
+    .produtos-container {
+        flex-direction: column;
+    }
+}
+
+/* PREÇO */
+
+.preco {
+    background: #f7f7f7;
+    padding: 60px;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-end;
+}
+
+.preco-item {
+    flex: 1 1 260px;
+    border: 4px solid white;
+    padding: 20px;
+    margin: 10px;
+}
+
+.preco-item h2 {
+    font-size: 3em;
+    color: #a4a4a4;
+    text-align: center;
+    margin-top: 20px;
+}
+
+.preco-item span {
+    max-width: 300px;
+    margin: 20px auto;
+    display: block;
+    font-size: 3em;
+    text-align: center;
+    font-weight: bold;
+    padding: 10px 0 5px 0;
+    border-top: 4px solid white;
+    border-bottom: 4px solid white;
+}
+
+.preco-item sup {
+    font-size: 1.5rem;
+}
+
+.preco-item ul {
+    max-width: 300px;
+    margin: 20px auto;
+    font-size: 1.25em;
+    font-style: italic;
+    color: #7c7c7c;
+}
+
+/* fazendo o alinhamento dos itens da lista */
+.preco-item li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+/* inserindo os pontos depois de cada item da lista */
+.preco-item li::after {
+    content: "";
+    display: block;
+    width: 6px;
+    height: 6px;
+    background: #2c70ff;
+    border-radius: 50%;
+}
+
+/* botão de comprar */
+
+.preco-item a {
+    max-width: 300px;
+    display: block;
+    margin: 20px auto;
+    border: 4px solid;
+    color: #222222;
+    text-transform: uppercase;
+    font-weight: bold;
+    font-size: 2.25em;
+    padding: 10px 0;
+    text-align: center;
+}
+
+.preco-item a:hover {
+    color: #2c70ff;
+}
+
+/* definido padding de 10px em aparelhores com telas até 800px */
+
+@media (max-width: 800px) {
+    .preco {
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+
+/* definido a ordem de apresentação dos item em telas menores*/
+
+/* nth-child() escolhe um filho dentro da lista indicado pelo numero nos parenteses */
+    .preco .preco-item:nth-child(3){
+        order: -2;
+    }
+    .preco .preco-item:nth-child(2){
+        order: -1;
+    }
+}
+
+/* QUALIDADE */
+
+.qualidade {
+    max-width: 960px;
+    margin: 60px auto;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.qualidade-item {
+    flex: 1 1 300px;
+    margin: 20px 10px ;
+}
+
+.qualidade-item h2 {
+    font-size: 2.25em;
+    color: #a4a4a4;
+    margin-bottom: 20px;
+}
+
+.qualidade-item h2::before {
+    content: "";
+    display: inline-block;
+    width: 8px;
+    height: 30px;
+    margin-right: 10px;
+    background: #2c70ff;
+}
+
+/* definido cores para os elementos que estão antes dos títulos.
+Ex: seleciona a partir do primeiro elemento e após o terceiro item pinta da mesma cor */
+.qualidade-item:nth-of-type(3n + 1) h2::before {
+    background: #ae81ff;
+}
+
+.qualidade-item:nth-of-type(3n + 2) h2::before {
+    background: #f9265e;
+}
+
+.qualidade-item:nth-of-type(3n + 3) h2::before {
+    background: #2c70ff;
+}
+
+.qualidade-item p {
+    font-size: 1.25em;
+    line-height: 1,4;
+    color: #7c7c7c;
+}
+
+/* NEWS */
+
+.news {
+    background: #7c7c7c;
+}
+.news-container {
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 60px 0px;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.news-info {
+    flex: 1 1 240px;
+    margin: 0 10px;
+}
+
+.news-info h1 {
+    font-size: 2.25em;
+    color: #a4a4a4;
+}
+.news-info p {
+    font-size: 1.25em;
+    font-style: italic;
+    max-width: 200px;
+    color: #a4a4a4;
+    margin-bottom: 10px;
+}
+
+.news-form {
+    flex: 2 1 260px;
+    margin: 0 10px;
+    align-self: center;
+    display: flex;
+    flex-wrap: wrap;    
+}
+
+.news-form input {
+    flex: 3 1 360px;
+    font-size: 1.25em;
+    color: #a4a4a4;
+	font-style: italic;
+    font-family: "Nunito", Arial, Helvetica, sans-serif;
+    border: 4px solid #2c70ff;
+    background: transparent;
+    padding: 15px 10px;
+    margin: 0;
+    border-radius: 0;
+}
+
+.news-form button {
+    flex: 1 1 160px;
+    font-family: "Nunito" Arial, Helvetica, sans-serif;
+    font-size: 1.5em;
+    font-weight: bold;
+    text-transform: uppercase;
+    background: #2c70ff;
+    color: white;
+    margin: 0;
+    cursor: pointer;
+    border: 0;
+    padding: 15px 10px;
+}
+
+/* FOOTER */
+
+.footer {
+    display: flex;
+    background: #2c70ff;
+    height: 200px;
+    align-items: center;
+}
+
+.footer p {
+    flex: 1;
+    text-align: center;
+    font-size: 1.5em;
+    color: #122ab2;
+}
